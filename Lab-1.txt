@@ -1,0 +1,247 @@
+﻿// 11 Створіть метод, який знаходить суму цифр будь якого числа int
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        System.out.println("Введіть цисло якого бажаете дізнатися сумму");
+        for(int n = scanner.nextInt(); n != 0; n /= 10)
+        {
+            sum += (n % 10);
+        }
+        System.out.println("сумма = " + sum);
+    }
+}
+
+//21 Продемонструйте у коді відмінності у використанні &&  та || у логічних виразах
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+
+    public static void main(String[] args)
+    {
+        int mouse; // число мышек
+        int weight; // вес кота в граммах
+        int  ill; //
+        int filler; //
+        System.out.println("Сколько мышей поймал кот?");
+        Scanner scanner = new Scanner(System.in) ;
+        mouse = scanner.nextInt();
+        weight = 4500;
+
+        if (mouse != 0 && weight / mouse < 1000) {
+            System.out.println("Можно кормить кота");
+        }
+        else
+        {
+                System.out.println("Нужно покормить кота!");
+        }
+        System.out.println("Как здоровье вашего кота?(0 - болен, 1 - все хорошо)");
+        Scanner scanner2 = new Scanner(System.in) ;
+        ill = scanner2.nextInt();
+        System.out.println("Есть ли наполнитель для кота? (0 - Закончился, 1 - Есть)");
+        Scanner scanner3 = new Scanner(System.in) ;
+        filler = scanner3.nextInt();
+        if (ill < 1 || filler == 0)
+        {
+            System.out.println("Необходимо Обратиться к доктору");
+        }
+        else
+        {
+            System.out.println("Это здорово! ;)");
+        }
+
+    }
+}
+
+//24 Створіть метод, який сортує масив String у порядку довжини рядків
+package com.company;
+import java.util.Arrays;
+import java.util.Comparator;
+
+class StringLengthSort implements Comparator<String> {
+    public int compare(String o1, String o2) {
+        if(o1.length() > o2.length()){
+            return 1;
+        }else{
+            if(o1.length() < o2.length()){
+                return -1;
+            }else{
+                return 0;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        String [] names = {"P", "Pppppppp","Pppppp" , "Pppp", "Ppppppppp", "Ppp", "Ppppppp", "Pp" ,"Ppppp" };
+        Comparator<String> stringLengthComparator = new StringLengthSort();
+        for(String str : names){
+            System.out.println(str);
+        }
+        Arrays.sort(names, stringLengthComparator); // применяем сортировку
+        System.out.println("\nотсортировано\n");
+        for(String str : names){
+            System.out.println(str);
+        }
+    }
+}
+
+//22 Створіть метод, який рахує факторіал числа, використовуючи цикли. Потім створити ще одну реалізацію, яка використовує рекурсію для вирішення цієї задачі.
+package com.company;
+
+class StringLengthSort{
+    static int calculateFactorial(int n){
+        int result = 1;
+        for (int i = 1; i <=n; i ++){
+            result = result*i;
+        }
+        return result;
+    }
+
+    public static void main(String[] args){
+        System.out.println(calculateFactorial(4));
+    }
+}
+package com.company;
+
+
+class StringLengthSort {
+    static int fact(int n) {
+        int result;
+
+        if(n == 1) return 1;
+        result = fact(n - 1) * n;
+
+        return result;
+
+    }
+    public static void main(String[] args) {
+
+
+
+        System.out.println("Факториал 5 равен " + fact(5));
+    }
+
+}
+
+
+
+
+// 11 Створіть метод, який знаходить суму цифр будь якого числа int
+package com.company;
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Comparator;
+
+class Sum {
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        System.out.println("Введіть число якого бажаете дізнатися сумму");
+        for(int n = scanner.nextInt(); n != 0; n /= 10)
+        {
+            sum += (n % 10);
+        }
+        System.out.println("сумма = " + sum);
+    }
+}
+
+//21 Продемонструйте у коді відмінності у використанні &&  та || у логічних виразах
+
+ class Main {
+
+
+    public static void main(String[] args)
+    {
+        int mouse; // число мышек
+        int weight; // вес кота в граммах
+        int  ill; //
+        int filler; //
+        System.out.println("Сколько мышей поймал кот?");
+        Scanner scanner = new Scanner(System.in) ;
+        mouse = scanner.nextInt();
+        weight = 4500;
+
+        if (mouse != 0 && weight / mouse < 1000) {
+            System.out.println("Можно кормить кота");
+        }
+        else
+        {
+            System.out.println("Нужно покормить кота!");
+        }
+        System.out.println("Как здоровье вашего кота?(0 - болен, 1 - все хорошо)");
+        Scanner scanner2 = new Scanner(System.in) ;
+        ill = scanner2.nextInt();
+        System.out.println("Есть ли наполнитель для кота? (0 - Закончился, 1 - Есть)");
+        Scanner scanner3 = new Scanner(System.in) ;
+        filler = scanner3.nextInt();
+        if (ill < 1 || filler == 0)
+        {
+            System.out.println("Необходимо Обратиться к доктору");
+        }
+        else
+        {
+            System.out.println("Это здорово! ;)");
+        }
+
+    }
+}
+
+//24 Створіть метод, який сортує масив String у порядку довжини рядків
+class StringLengthSort implements Comparator<String> {
+    public int compare(String o1, String o2) {
+        return Integer.compare(o1.length(), o2.length());
+    }
+    public static void main(String[] args) {
+        String [] names = {"P", "Pppppppp","Pppppp" , "Pppp", "Ppppppppp", "Ppp", "Ppppppp", "Pp" ,"Ppppp" };
+        Comparator<String> stringLengthComparator = new StringLengthSort();
+        for(String str : names){
+            System.out.println(str);
+        }
+        Arrays.sort(names, stringLengthComparator); // применяем сортировку
+        System.out.println("\nОтсортированно по строке\n");
+        for(String str : names){
+            System.out.println(str);
+        }
+    }
+}
+
+//22 Створіть метод, який рахує факторіал числа, використовуючи цикли.
+// Потім створити ще одну реалізацію, яка використовує рекурсію для вирішення цієї задачі.
+class Factorial{
+    static int calculateFactorial(int n){
+        int result = 1;
+        for (int i = 1; i <=n; i ++){
+            result = result*i;
+        }
+        return result;
+    }
+
+    public static void main(String[] args){
+        System.out.println(calculateFactorial(4));
+    }
+}
+class FactorialRecurshion {
+    static int fact(int n) {
+        int result;
+
+        if(n == 1) return 1;
+        result = fact(n - 1) * n;
+
+        return result;
+
+    }
+    public static void main(String[] args) {
+
+
+
+        System.out.println("Факториал 5 равен " + fact(5));
+    }
+}
